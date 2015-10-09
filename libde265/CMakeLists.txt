@@ -65,7 +65,7 @@ endif()
 
 add_definitions(-DLIBDE265_EXPORTS)
 
-add_library(${LIBDE265_LIBRARY_NAME} SHARED ${libde265_sources})
+add_library(${LIBDE265_LIBRARY_NAME} ${libde265_sources})
 
 target_link_libraries(${LIBDE265_LIBRARY_NAME} ${CMAKE_THREAD_LIBS_INIT})
 
@@ -82,3 +82,4 @@ if(SUPPORTS_SSE4_1)
   add_subdirectory (x86)
   target_link_libraries(${LIBDE265_LIBRARY_NAME} x86)
 endif()
+

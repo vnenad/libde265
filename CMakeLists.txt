@@ -1,6 +1,9 @@
 project (libde265)
 cmake_minimum_required (VERSION 2.8)
 
+set(CMAKE_USE_RELATIVE_PATHS 1)
+set(CMAKE_SUPPRESS_REGENERATION:BOOL=ON)
+
 # The version number.
 set (NUMERIC_VERSION 0x01000000)
 set (PACKAGE_VERSION 1.0.0)
@@ -55,6 +58,8 @@ if(MSVC)
   add_definitions(-DHAVE_STDINT_H)
   add_definitions(-DHAVE_STDBOOL_H)
   add_definitions(-DNOMINMAX)
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT /GL /Ot /Oi /Oy /GT /GF /GS- /Gy- /arch:SSE2 /fp:fast /fp:except-")
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 endif()
 
 if(UNIX)
