@@ -24,7 +24,9 @@
 #include <stddef.h>
 
 /* 7.18.1.1  Exact-width integer types */
+#ifdef STAND_ALONE_LIBDE265
 typedef signed char int8_t;
+#endif
 typedef unsigned char   uint8_t;
 typedef short  int16_t;
 typedef unsigned short  uint16_t;
@@ -34,7 +36,9 @@ typedef __int64  int64_t;
 typedef unsigned __int64 uint64_t;
 
 /* 7.18.1.2  Minimum-width integer types */
+#ifdef STAND_ALONE_LIBDE265
 typedef signed char int_least8_t;
+#endif
 typedef unsigned char   uint_least8_t;
 typedef short  int_least16_t;
 typedef unsigned short  uint_least16_t;

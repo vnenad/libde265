@@ -62,6 +62,8 @@ if(MSVC)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 endif()
 
+add_definitions(-DSTAND_ALONE_LIBDE265)
+
 if(UNIX)
   set(LIBDE265_LIBRARY_NAME de265)
 else()
